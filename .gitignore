@@ -1,0 +1,60 @@
+# Don't commit config
+config/*.yml
+
+# don't push around data files (for dev envs only)
+fcrepo4-data
+
+## MAC OS
+.DS_Store
+
+## TEXTMATE
+*.tmproj
+tmtags
+
+## EMACS
+*~
+\#*
+.\#*
+
+## VIM
+*.sw[pon]
+
+## OSX
+.DS_Store
+nohup.out
+
+## Cucumber
+
+rerun.txt
+
+## PROJECT::GENERAL
+coverage
+rdoc
+/.bundle
+tmp
+
+*.log
+*~
+
+#redis snapshot db
+dump.rdb
+
+db/schema.rb
+
+.project
+.buildpath
+
+/.yardoc
+/doc
+
+## PROJECT::SPECIFIC
+.byebug_history
+
+## Carried over from sufia-models (RIP)
+*.gem
+*.rbc
+.config
+InstalledFiles
+_yardoc
+lib/bundler/man
+spec/reports
