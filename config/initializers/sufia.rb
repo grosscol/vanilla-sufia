@@ -1,26 +1,22 @@
 Sufia.config do |config|
-  # Sufia can integrate with Zotero's Arkivo service for automatic deposit
-  # of Zotero-managed research items.
-  # Defaults to false.  See README for more info
-  config.arkivo_api = true
+  # Injected via `rails g sufia:work Work`
+  config.register_curation_concern :work
+  # Email recipient of messages sent via the contact form
+  # config.contact_email = "repo-admin@example.org"
 
-  config.max_days_between_audits = 7
-  config.max_notifications_for_dashboard = 5
+  # Text prefacing the subject entered in the contact form
+  # config.subject_prefix = "Contact form:"
 
-  config.permission_levels = {
-    "Choose Access" => "none",
-    "View/Download" => "read",
-    "Edit" => "edit"
-  }
+  # How many notifications should be displayed on the dashboard
+  # config.max_notifications_for_dashboard = 5
 
-  config.owner_permission_levels = {
-    "Edit" => "edit"
-  }
+  # How frequently should a file be audited.
+  # config.max_days_between_audits = 7
 
   # Enable displaying usage statistics in the UI
   # Defaults to FALSE
   # Requires a Google Analytics id and OAuth2 keyfile.  See README for more info
-  # config.analytics = true
+  # config.analytics = false
 
   # Specify a Google Analytics tracking ID to gather usage statistics
   # config.google_analytics_id = 'UA-99999999-1'
@@ -32,10 +28,7 @@ Sufia.config do |config|
   # Default is false
   # config.citations = false
 
-  # Enables a link to the citations page for a generic_file.
-# Default is false
-# config.citations = false
-# Where to store tempfiles, leave blank for the system temp directory (e.g. /tmp)
+  # Where to store tempfiles, leave blank for the system temp directory (e.g. /tmp)
   # config.temp_file_base = '/home/developer1'
 
   # Specify the form of hostpath to be used in Endnote exports
@@ -53,10 +46,6 @@ Sufia.config do |config|
 
   # Store identifier minter's state in a file for later replayability
   # config.minter_statefile = '/tmp/minter-state'
-
-  # Process for translating Fedora URIs to identifiers and vice versa
-  # config.translate_uri_to_id = ActiveFedora::Noid.config.translate_uri_to_id
-  # config.translate_id_to_uri = ActiveFedora::Noid.config.translate_id_to_uri
 
   # Specify the prefix for Redis keys:
   # config.redis_namespace = "sufia"
@@ -97,6 +86,10 @@ Sufia.config do |config|
   # The user who runs audit jobs. Update this if you aren't using emails
   # config.audit_user_key = 'audituser@example.com'
 
+  # Temporary path to hold uploads before they are ingested into FCrepo.
+  # This must be a lambda that returns a Pathname
+  #  config.upload_path = ->() { Rails.root + 'tmp' + 'uploads' }
+
   # If browse-everything has been configured, load the configs.  Otherwise, set to nil.
   begin
     if defined? BrowseEverything
@@ -110,3 +103,7 @@ Sufia.config do |config|
 end
 
 Date::DATE_FORMATS[:standard] = "%m/%d/%Y"
+
+Qa::Authorities::Local.register_subauthority('subjects', 'Qa::Authorities::Local::TableBasedAuthority')
+Qa::Authorities::Local.register_subauthority('languages', 'Qa::Authorities::Local::TableBasedAuthority')
+Qa::Authorities::Local.register_subauthority('genres', 'Qa::Authorities::Local::TableBasedAuthority')

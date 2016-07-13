@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'sufia', '7.0.0.rc1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -39,18 +40,13 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  # gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 2.0'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
 end
 
-# Use this file to reference specific commits of gems.
 
-gem 'curation_concerns', github: 'projecthydra-labs/curation_concerns', branch: 'master'
-
-group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-end
-gem 'sufia', path: '/home/grosscol/workspace/sufia'
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
 end
