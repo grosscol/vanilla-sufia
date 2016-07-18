@@ -1,3 +1,6 @@
+public/assets/*
+db/production.sqlite3 
+db/development.sqlite3 
 # Don't commit config
 config/*.yml
 
