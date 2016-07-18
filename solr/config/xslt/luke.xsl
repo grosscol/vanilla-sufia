@@ -39,8 +39,10 @@
         <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
                 <link rel="stylesheet" type="text/css" href="solr-admin.css"/>
+                <!-- Comment out the favicon because it's not in the assets path 
                 <link rel="icon" href="favicon.ico" type="image/ico"/>
                 <link rel="shortcut icon" href="favicon.ico" type="image/ico"/>
+                -->
                 <title>
                     <xsl:value-of select="$title"/>
                 </title>
