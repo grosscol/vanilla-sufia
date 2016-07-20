@@ -1,5 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  
+  # Add resque as the active job backend
+  config.active_job.queue_adapter = :resque
 
   # Code is not reloaded between requests.
   config.cache_classes = true

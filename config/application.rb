@@ -13,6 +13,9 @@ module Vs
       g.test_framework :rspec, :spec => true
     end
 
+    # Add tasks to autolib path
+    config.autoload_paths += Dir["#{config.root}/lib/tasks/resque.rake"]
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
