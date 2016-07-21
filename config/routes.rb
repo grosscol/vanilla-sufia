@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount Qa::Engine => '/authorities'
 
   # Mounting BrowseEverything per awead's instructions
-  mount BrowseEverything::Engine => '/browse
+  mount BrowseEverything::Engine => '/browse'
   
   mount Blacklight::Engine => '/'
   
