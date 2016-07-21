@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   Hydra::BatchEdit.add_routes(self)
   mount Qa::Engine => '/authorities'
 
+  # Mounting BrowseEverything per awead's instructions
+  mount BrowseEverything::Engine => '/browse
   
   mount Blacklight::Engine => '/'
   
