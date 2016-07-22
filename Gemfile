@@ -6,10 +6,13 @@ gem 'mysql2'
 gem 'puma'
 gem 'resque'
 gem 'resque-pool'
+gem 'concurrent-ruby'
 
 # Generated Gemfile follows:
 
 gem 'sufia', '7.0.0.rc2'
+gem 'pry'
+gem 'pry-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
