@@ -9,7 +9,7 @@ gem 'resque-pool'
 
 # Generated Gemfile follows:
 
-gem 'sufia', '7.0.0.rc2'
+gem 'sufia', '~> 7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
